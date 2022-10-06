@@ -15,7 +15,11 @@ namespace AutoServiceMashhad.Web.Pages.ServiceTypes
         {
             _services = services;
         }
+<<<<<<< HEAD
         public IList<IServiceType> ServiceTypes { get; set; }
+=======
+        public IList<ServiceType> ServiceTypes { get; set; }
+>>>>>>> 737dcf1ad5e982f4d76ccd571d3e9fbcbce6c8a4
         public async Task<IActionResult> OnGet()
         {
             ServiceTypes = await _services.GetAllServiceTypes().ToListAsync();

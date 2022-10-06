@@ -6,9 +6,15 @@
 <h3 class="text-center">مدیریت خدمات اتو سرویس مشهد</h3>
 <hr />
 <div class="border" style="background-color: white">
+<<<<<<< HEAD
     <div class="d-flex justify-content-between p-2">
         <div>
             <h4 class="text-secondary" style="margin-top:4px">لیست سرویس ها</h4>
+=======
+    <div class="d-flex justify-content-between p-3">
+        <div>
+            <h3 class="text-secondary">لیست سرویس ها</h3>
+>>>>>>> 737dcf1ad5e982f4d76ccd571d3e9fbcbce6c8a4
         </div>
         <div>
             <a asp-page="Create" class="btn btn-success text-light">
@@ -35,6 +41,7 @@
     {
         <table class="table table-striped border">
             <tr class="table-secondary">
+<<<<<<< HEAD
                 <th style="padding-right:25px">عنوان سرویس</th>
                 <th>قیمت سرویس</th>
                 <th></th>
@@ -45,12 +52,27 @@
                 <tr style="vertical-align:middle">
                     <td style="padding-right:25px">@item.Name</td>
                     <td style="padding-right:12px">@item.Price.ToString("#,00") تومان</td>
+=======
+                <th>عنوان سرویس</th>
+                <th>قیمت سرویس</th>
+                <th></th>
+            </tr>
+            <tr>
+                @foreach (var item in Model.ServiceTypes)
+                {
+                    <td>@item.Name</td>
+                    <td class="text-black-50">@item.Price.ToString("#,00")</td>
+>>>>>>> 737dcf1ad5e982f4d76ccd571d3e9fbcbce6c8a4
                     <td style="width: 150px">
                         <div class="btn-group" role="group">
                             <a class="btn btn-outline-primary" asp-page="Edit" asp-route-Id="@item.Id">
                                 <i class="fa fa-edit fa-sm"></i>
                             </a>
+<<<<<<< HEAD
                             <a class="btn btn-outline-success" asp-page="Detail" asp-route-Id="@item.Id">
+=======
+                            <a class="btn btn-outline-success" asp-page="Details" asp-route-Id="@item.Id">
+>>>>>>> 737dcf1ad5e982f4d76ccd571d3e9fbcbce6c8a4
                                 <i class="fa fa-list-alt fa-sm"></i>
                             </a>
                             <a class="btn btn-outline-danger" asp-page="Delete" asp-route-Id="@item.Id">
@@ -58,9 +80,14 @@
                             </a>
                         </div>
                     </td>
+<<<<<<< HEAD
                 </tr>
             }
 
+=======
+                }
+            </tr>
+>>>>>>> 737dcf1ad5e982f4d76ccd571d3e9fbcbce6c8a4
         </table>
     }
 </div>

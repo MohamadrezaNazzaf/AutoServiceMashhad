@@ -18,6 +18,7 @@ namespace AutoServiceMashhad.Core.Services
             _context = context;
         }
 
+<<<<<<< HEAD
 
         public IQueryable<IServiceType> GetAllServiceTypes()
         {
@@ -30,11 +31,15 @@ namespace AutoServiceMashhad.Core.Services
         }
 
         public void AddService(IServiceType serviceType)
+=======
+        public void AddService(ServiceType serviceType)
+>>>>>>> 737dcf1ad5e982f4d76ccd571d3e9fbcbce6c8a4
         {
             _context.ServiceTypes.Add(serviceType);
             _context.SaveChanges();
         }
 
+<<<<<<< HEAD
         public void EditService(IServiceType serviceType)
         {
             _context.Entry(serviceType).State = EntityState.Modified;
@@ -45,6 +50,11 @@ namespace AutoServiceMashhad.Core.Services
         {
             _context.Entry(serviceType).State = EntityState.Deleted;
             _context.SaveChanges();
+=======
+        public IQueryable<ServiceType> GetAllServiceTypes()
+        {
+            return _context.ServiceTypes;
+>>>>>>> 737dcf1ad5e982f4d76ccd571d3e9fbcbce6c8a4
         }
     }
 }

@@ -15,7 +15,11 @@ namespace AutoServiceMashhad.Web.Pages.ServiceTypes
 
 
         [BindProperty]
+<<<<<<< HEAD
         public IServiceType ServiceType { get; set; }
+=======
+        public ServiceType ServiceType { get; set; }
+>>>>>>> 737dcf1ad5e982f4d76ccd571d3e9fbcbce6c8a4
         public IActionResult OnGet()
         {
             return Page();
