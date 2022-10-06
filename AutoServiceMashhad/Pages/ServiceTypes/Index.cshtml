@@ -1,0 +1,66 @@
+﻿@page
+@model AutoServiceMashhad.Web.Pages.ServiceTypes.IndexModel
+@{
+    ViewData["Title"] = "مدیریت خدمات";
+}
+<h3 class="text-center">مدیریت خدمات اتو سرویس مشهد</h3>
+<hr />
+<div class="border" style="background-color: white">
+    <div class="d-flex justify-content-between p-2">
+        <div>
+            <h4 class="text-secondary" style="margin-top:4px">لیست سرویس ها</h4>
+        </div>
+        <div>
+            <a asp-page="Create" class="btn btn-success text-light">
+                افزودن سرویس جدید
+                <i class="fa fa-plus fa-sm"></i>
+            </a>
+        </div>
+    </div>
+
+</div>
+<br />
+<div>
+    @if (Model.ServiceTypes.Count == 0)
+    {
+        <div class="alert alert-warning">
+            سرویسی جهت نمایش تعریف نشده است، شما می توانید از طریق
+            <a asp-page="Create" class="btn btn-link">
+                افزودن سرویس جدید
+            </a>
+            سرویس جدید ایجاد کنید.
+        </div>
+    }
+    else
+    {
+        <table class="table table-striped border">
+            <tr class="table-secondary">
+                <th style="padding-right:25px">عنوان سرویس</th>
+                <th>قیمت سرویس</th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.ServiceTypes)
+            {
+                <tr style="vertical-align:middle">
+                    <td style="padding-right:25px">@item.Name</td>
+                    <td style="padding-right:12px">@item.Price.ToString("#,00") تومان</td>
+                    <td style="width: 150px">
+                        <div class="btn-group" role="group">
+                            <a class="btn btn-outline-primary" asp-page="Edit" asp-route-Id="@item.Id">
+                                <i class="fa fa-edit fa-sm"></i>
+                            </a>
+                            <a class="btn btn-outline-success" asp-page="Detail" asp-route-Id="@item.Id">
+                                <i class="fa fa-list-alt fa-sm"></i>
+                            </a>
+                            <a class="btn btn-outline-danger" asp-page="Delete" asp-route-Id="@item.Id">
+                                <i class="fa fa-trash-o fa-sm"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+</div>

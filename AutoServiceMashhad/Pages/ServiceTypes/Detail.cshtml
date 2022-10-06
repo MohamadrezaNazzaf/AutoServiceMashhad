@@ -1,0 +1,31 @@
+﻿@page
+@model AutoServiceMashhad.Web.Pages.ServiceTypes.DetailModel
+
+@{
+    ViewData["Title"] = "جزئیات";
+}
+
+<h4>جزئیات سرویس <span class="text-success">@Model.ServiceType.Name</span></h4>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceType.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ServiceType.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ServiceType.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Model.ServiceType.Price.ToToman()
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ServiceType.Id">ویرایش</a> |
+    <a asp-page="./Index">بازگشت به لیست</a>
+</div>
+

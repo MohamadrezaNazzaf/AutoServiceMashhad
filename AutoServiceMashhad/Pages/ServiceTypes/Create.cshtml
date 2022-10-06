@@ -1,0 +1,53 @@
+﻿@page
+@model AutoServiceMashhad.Web.Pages.ServiceTypes.CreateModel
+@{
+}
+<br />
+<h4 class="text-secondary">
+    افزودن سرویس جدید
+</h4>
+<hr />
+<br />
+<form method="post">
+    <div class="border p-3 justify-content-center">
+        <div class="form-group row">
+            <div class="col-3 offset-md-1 text-end">
+                عنوان سرویس :
+            </div>
+            <div class="col-5">
+                <input asp-for="ServiceType.Name" class="form-control" />
+                <span asp-validation-for="ServiceType.Name"></span>
+            </div>
+            
+        </div>
+        <br />
+        <div class="form-group row">
+            <div class="col-3 offset-md-1 text-end">
+                قیمت سرویس :
+            </div>
+            <div class="col-5">
+                <input type="number" asp-for="ServiceType.Price" style="direction:rtl" class="form-control" />
+                <span asp-validation-for="ServiceType.Price"></span>
+            </div>
+           
+        </div>
+        <br />
+        <div class="form-group row">
+            <div class="col-5 offset-4">
+                <div class="row">
+                    <div class="col-6">
+                        <input type="submit" class="btn btn-info form-control" value="ثبت" />
+                    </div>
+                    <div class="col-6">
+                        <a asp-page="Index" class="btn btn-outline-success form-control">بازگشت</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+} 
